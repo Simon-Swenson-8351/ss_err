@@ -19,13 +19,13 @@ ss_err_t *swap_bytes(uint8_t *buf1, size_t buf1_size, uint8_t *buf2, size_t buf2
     return NULL;
 }
 
-
+enum { ARY_SIZE = 7 };
 int main(int argc, char *argv[]) {
     ss_err_t *e;
-    int buf1[7] = {0, 1, 2, 3, 4, 5, 6};
-    int buf2[7] = {2, 3, 5, 7, 11, 13, 17};
-    size_t buf1_size = sizeof(int) * 7;
-    size_t buf2_size = sizeof(int) * 7;
+    int buf1[ARY_SIZE] = {0, 1, 2, 3, 4, 5, 6};
+    int buf2[ARY_SIZE] = {2, 3, 5, 7, 11, 13, 17};
+    size_t buf1_size = sizeof(int) * ARY_SIZE;
+    size_t buf2_size = sizeof(int) * ARY_SIZE;
     if(e = swap_bytes(NULL, buf1_size, (uint8_t *)buf2, buf2_size))
         printf("%s\n", e->str);
     if(e = swap_bytes(NULL, buf1_size, (uint8_t *)buf2, buf2_size))
